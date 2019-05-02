@@ -220,7 +220,7 @@ function takeSnapshot() {
 
     // some API's (like Azure Custom Vision) need a blob with image data
     getCanvasBlob(canvas).then(function(blob) {
-
+        console.log(blob);
         // do something with the image blob
 
     });
@@ -239,7 +239,7 @@ function createClickFeedbackUI() {
     var overlay = document.getElementById("video_overlay");//.style.display;
 
     // sound feedback
-    var sndClick = new Howl({ src: ['snd/click.mp3'] });
+    // var sndClick = new Howl({ src: ['snd/click.mp3'] });
 
     var overlayVisibility = false;
     var timeOut = 80;
@@ -252,7 +252,7 @@ function createClickFeedbackUI() {
     return function() {
 
         if(overlayVisibility == false) {
-            sndClick.play();
+            // sndClick.play();
             overlayVisibility = true;
             overlay.style.display = 'block';
             setTimeout(setFalseAgain, timeOut);
